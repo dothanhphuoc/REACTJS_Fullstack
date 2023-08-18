@@ -11,11 +11,11 @@
     .box {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         background: rgba(0, 0, 0, 0.4);
-        width: 450px;
+        width: 550px;
         border-radius: 2rem;
 
         .login-content {
-            padding: 10px;
+            padding: 30px 40px;
 
             .login-title {
                 font-size: 24px;
@@ -34,13 +34,26 @@
                     font-size: 17px;
                 }
 
-                input {
-                    padding: 12px 10px;
-                    border: none;
-                    outline: none;
 
-                    &::placeholder {
-                        color: #000;
+                .box-input {
+                    position: relative;
+
+                    input {
+                        padding: 12px 10px;
+                        border: none;
+                        outline: none;
+
+                        &::placeholder {
+                            color: #000;
+                        }
+                    }
+
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 10px;
+                        cursor: pointer;
                     }
                 }
             }
@@ -87,6 +100,22 @@
                 background-color: #ea4335;
                 color: #fff;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .login-container {
+        .box {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .login-container {
+        .box {
+            width: 350px;
         }
     }
 }
