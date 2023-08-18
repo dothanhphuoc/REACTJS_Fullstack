@@ -1,0 +1,92 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets//images/background-login.jpg');
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background: rgba(0, 0, 0, 0.4);
+        width: 450px;
+        border-radius: 2rem;
+
+        .login-content {
+            padding: 10px;
+
+            .login-title {
+                font-size: 24px;
+                font-weight: 600;
+                padding-top: 10px;
+                color: #ccc;
+                text-align: center;
+            }
+
+            .login-input {
+                margin: 20px 0;
+
+                label {
+                    color: #ccc;
+                    padding: 0 0 5px 10px;
+                    font-size: 17px;
+                }
+
+                input {
+                    padding: 12px 10px;
+                    border: none;
+                    outline: none;
+
+                    &::placeholder {
+                        color: #000;
+                    }
+                }
+            }
+
+            .btn {
+                width: 60px;
+                background-color: #fff;
+                border: none;
+                outline: none;
+                color: #000;
+                cursor: pointer;
+                transition: .3s linear;
+
+                &:hover {
+                    letter-spacing: 1.5px;
+                }
+            }
+
+            .forget-password {
+                font-size: 14px;
+                color: #ccc;
+                cursor: pointer;
+            }
+
+            .login-action {
+                color: #ccc;
+            }
+
+            .icon-action {
+                margin: 0 6px;
+                padding: 8px 12px;
+                // font-size: 16px;
+                line-height: 1.5;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .icon-facebook {
+                background-color: #1da1f2;
+                color: #fff;
+            }
+
+            .icon-google {
+                background-color: #ea4335;
+                color: #fff;
+            }
+        }
+    }
+}
