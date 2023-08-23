@@ -5,4 +5,10 @@ const handleLoginApi = (email, password) => {
     return axios.post("api/login", { email, password });
 }
 
-export { handleLoginApi };
+const getListUser = (inputID) => {
+
+    //template string
+    return axios.get(`api/display-list-user?id=${inputID}`);
+}
+
+export { handleLoginApi, getListUser };
