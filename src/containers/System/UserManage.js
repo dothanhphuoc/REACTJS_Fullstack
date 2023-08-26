@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
 import { getListUser } from '../../services/userService';
+import ModalAddUser from './ModalAddUser';
 
 
 class UserManage extends Component {
@@ -19,16 +20,30 @@ class UserManage extends Component {
     /*
         - 1. run contructer -> init state
         - 2. did mount (setState)
-        - 3. render
+        - 3. render (re-render)
     */
 
     async componentDidMount() {
         let response = await getListUser("ALL");
         if (response && response.errCode === 0) {
             this.setState({
-                arrUsers: response.users
+                arrUsers: response.users,
+                isOpenModalUser: false
             })
         }
+    }
+
+    //action
+    handleAddNewUser = () => {
+        this.setState({
+            isOpenModalUser: true
+        })
+    }
+
+    toggleUserModal = () => {
+        this.setState({
+            isOpenModalUser: !this.state.isOpenModalUser
+        })
     }
 
     render() {
@@ -36,7 +51,16 @@ class UserManage extends Component {
 
         return (
             <div className="user-container">
+
+                <ModalAddUser
+                    isOpen={this.state.isOpenModalUser}
+                    toggleUserModal={this.toggleUserModal}
+                />
                 <h2 className='title text-center'>Manage users with Neil</h2>
+
+                <div className='mx-1 text-center mt-3'>
+                    <button className='btn-primary' onClick={() => this.handleAddNewUser()}>Add New User <i className="fa-solid fa-plus"></i></button>
+                </div>
 
                 <div className='user-table'>
                     <table id="table">
@@ -59,8 +83,8 @@ class UserManage extends Component {
                                             <td>{user.lastName}</td>
                                             <td>{user.address}</td>
                                             <td className='action-icon'>
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                <i class="fa-solid fa-trash"></i>
+                                                <i className="fa-solid fa-pen-to-square"></i>
+                                                <i className="fa-solid fa-trash"></i>
                                             </td>
                                         </tr>
                                     )
@@ -74,7 +98,6 @@ class UserManage extends Component {
             </div>
         );
     }
-
 }
 
 const mapStateToProps = state => {
