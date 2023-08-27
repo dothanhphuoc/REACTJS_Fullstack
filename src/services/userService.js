@@ -11,4 +11,7 @@ const getListUser = (inputID) => {
     return axios.get(`api/display-list-user?id=${inputID}`);
 }
 
-export { handleLoginApi, getListUser };
+const createNewUserService = (dataUser) => {
+    return axios.post('/api/create-new-user', dataUser);
+}
+export { handleLoginApi, getListUser, createNewUserService };

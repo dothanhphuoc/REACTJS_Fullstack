@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
-import { getListUser } from '../../services/userService';
+import { getListUser, createNewUserService } from '../../services/userService';
 import ModalAddUser from './ModalAddUser';
 
 
@@ -12,7 +11,8 @@ class UserManage extends Component {
         super(props);
 
         this.state = {
-
+            listUser: [],
+            isOpenModalUser: false
         }
     }
 
@@ -24,16 +24,20 @@ class UserManage extends Component {
     */
 
     async componentDidMount() {
+        await this.getListUserFromReact();
+    }
+
+    //action
+    getListUserFromReact = async () => {
         let response = await getListUser("ALL");
         if (response && response.errCode === 0) {
             this.setState({
-                arrUsers: response.users,
+                listUser: response.users,
                 isOpenModalUser: false
             })
         }
     }
 
-    //action
     handleAddNewUser = () => {
         this.setState({
             isOpenModalUser: true
@@ -46,8 +50,26 @@ class UserManage extends Component {
         })
     }
 
+
+    createNewUser = async (dataUser) => {
+        try {
+            let response = await createNewUserService(dataUser);
+            if (response && response.errCode !== 0) {
+                alert(response.errMessage)
+            } else {
+                await this.getListUserFromReact();
+                this.setState({
+                    isOpenModalUser: false,
+
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     render() {
-        let listUser = this.state.arrUsers;
+        let listUser = this.state.listUser;
 
         return (
             <div className="user-container">
@@ -55,6 +77,7 @@ class UserManage extends Component {
                 <ModalAddUser
                     isOpen={this.state.isOpenModalUser}
                     toggleUserModal={this.toggleUserModal}
+                    createNewUser={this.createNewUser}
                 />
                 <h2 className='title text-center'>Manage users with Neil</h2>
 
