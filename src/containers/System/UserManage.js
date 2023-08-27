@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './UserManage.scss';
-import { getListUser, createNewUserService } from '../../services/userService';
+import {
+    getListUser,
+    createNewUserService,
+    deleteUserService
+} from '../../services/userService';
 import ModalAddUser from './ModalAddUser';
+import { eventEmitter } from '../../utils/Emitter';
 
 
 class UserManage extends Component {
@@ -51,6 +56,7 @@ class UserManage extends Component {
     }
 
 
+    //create new user
     createNewUser = async (dataUser) => {
         try {
             let response = await createNewUserService(dataUser);
@@ -60,13 +66,28 @@ class UserManage extends Component {
                 await this.getListUserFromReact();
                 this.setState({
                     isOpenModalUser: false,
-
                 })
+                eventEmitter.emit('EVENT_CLEAR_MODAL_DATA')
             }
         } catch (e) {
             console.log(e)
         }
     }
+
+    //delete user
+    handleDeleteUser = async (user) => {
+        try {
+            let response = await deleteUserService(user.id);
+            if (response && response.errCode !== 0) {
+                alert(response.errMessage)
+            } else {
+                await this.getListUserFromReact();
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
 
     render() {
         let listUser = this.state.listUser;
@@ -107,17 +128,18 @@ class UserManage extends Component {
                                             <td>{user.address}</td>
                                             <td className='action-icon'>
                                                 <i className="fa-solid fa-pen-to-square"></i>
-                                                <i className="fa-solid fa-trash"></i>
+                                                <i
+                                                    className="fa-solid fa-trash"
+                                                    onClick={() => this.handleDeleteUser(user)}
+                                                ></i>
                                             </td>
                                         </tr>
                                     )
                                 })
                             }
                         </tbody>
-
                     </table>
                 </div>
-
             </div>
         );
     }

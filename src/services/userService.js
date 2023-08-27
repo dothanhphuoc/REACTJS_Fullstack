@@ -1,4 +1,3 @@
-import { stringify } from "react-auth-wrapper/helpers";
 import axios from "../axios";   //axios da customize    
 
 const handleLoginApi = (email, password) => {
@@ -6,12 +5,26 @@ const handleLoginApi = (email, password) => {
 }
 
 const getListUser = (inputID) => {
-
     //template string
     return axios.get(`api/display-list-user?id=${inputID}`);
 }
 
+//create new user
 const createNewUserService = (dataUser) => {
     return axios.post('/api/create-new-user', dataUser);
 }
-export { handleLoginApi, getListUser, createNewUserService };
+
+//delete user
+const deleteUserService = (userId) => {
+    return axios.delete('/api/delete-user', {
+        data: {
+            id: userId
+        }
+    });
+}
+export {
+    handleLoginApi,
+    getListUser,
+    createNewUserService,
+    deleteUserService
+};
