@@ -17,8 +17,8 @@
             align-items: center;
 
             .icon-menu {
-                font-size: 25px;
-                color: #ccc;
+                font-size: 20px;
+                color: #333;
                 margin-right: 5px;
                 cursor: pointer;
             }
@@ -26,15 +26,15 @@
             .logoWeb {
                 background-image: url('../../assets/logo.png');
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-size: contain;
                 background-position: center;
-                height: 40px;
-                width: 160px;
+                height: 70%;
+                width: 100%;
             }
         }
 
         .center-content {
-            width: 60%;
+            width: 55%;
 
             .navbar-center-content {
                 display: flex;
@@ -45,6 +45,7 @@
 
                 .child-center-content {
                     list-style: none;
+                    line-height: 1.2;
                     cursor: pointer;
 
                     a {
@@ -63,7 +64,11 @@
         }
 
         .right-content {
-            width: 20%;
+            width: 25%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 30px;
 
             .action {
                 height: 100%;
@@ -89,6 +94,30 @@
                     cursor: pointer;
                 }
             }
+
+            .language {
+                span {
+                    padding: 1px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+
+                .language-vi {
+
+                    // cursor: pointer;
+                    &.active {
+                        color: #45c3d2;
+                    }
+                }
+
+                .language-en {
+                    // cursor: pointer;
+
+                    &.active {
+                        color: #45c3d2;
+                    }
+                }
+            }
         }
     }
 }
@@ -100,7 +129,7 @@
     background-size: cover;
     height: 100vh;
     width: 100%;
-
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -124,8 +153,8 @@
         justify-content: center;
         border-radius: 25px;
         width: fit-content;
-        padding: 10px;
-        background-color: #f7d800;
+        padding: 8px 10px;
+        background-color: #45c3d2;
 
         input {
             height: 30px;
@@ -134,11 +163,34 @@
             border: none;
             outline: none;
             padding-left: 10px;
+            color: #fff;
+
+            &::placeholder {
+                color: #fff;
+                font-size: 15px;
+            }
+
+
         }
 
         i {
             margin: 0 5px;
+            color: #fff;
             cursor: pointer;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 2px;
+                height: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -10px;
+                background-color: #f1f1f1;
+                opacity: 0.5;
+            }
         }
     }
 
@@ -155,9 +207,9 @@
     }
 
     .options {
-        // background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
-        // padding-top: 30px;
-        // padding-bottom: 20px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+        padding-top: 30px;
+        padding-bottom: 20px;
         width: 100%;
 
         .list-options {
@@ -168,7 +220,6 @@
             padding: 0;
 
             li {
-                border: 1px solid red;
                 width: fit-content;
                 list-style: none;
                 text-align: center;
@@ -180,12 +231,14 @@
                     border-radius: 50%;
                     background-color: #fff;
                     padding: 5px;
+                    margin-bottom: 5px;
                 }
 
                 a {
                     text-decoration: none;
                     display: block;
-                    font-size: 18px;
+                    font-size: 17px;
+                    line-height: 1.2;
                     font-weight: 600;
                     color: #000;
                     cursor: pointer;

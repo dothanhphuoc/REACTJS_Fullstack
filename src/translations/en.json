@@ -1,4 +1,30 @@
 {
+    "homeheader": {
+        "specialty": "Specialty",
+        "searchdoctor": "Find a doctor by specialty",
+        "healthFacilities": "Health Facilities",
+        "selectHospital": "Choose hospital clinic",
+        "doctor": "Doctor",
+        "selectDoctor": "Choose a doctor",
+        "checkupPackage": "Checkup Package",
+        "generalHealth": "General health check",
+        "support": "Support"
+    },
+    "banner": {
+        "title1": "COMPREHENSIVE",
+        "title2": "HEALTH CARE MEDICAL PLATFORM"
+    },
+    "options": {
+        "specialistExamination": "Specialist Examination",
+        "remoteExamination": "Remote Examination",
+        "generalExamination": "General Examination",
+        "medicalTests": "Medical Tests",
+        "mentalHealth": "Mental Health",
+        "dentalExamination": "Dental Examination",
+        "surgeryPackage": "Surgery Package",
+        "testHealth": "Health Test",
+        "medicalNearYou": "Medical Near You"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",

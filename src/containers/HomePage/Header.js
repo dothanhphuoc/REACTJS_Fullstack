@@ -3,9 +3,18 @@ import { connect } from 'react-redux';
 import './Header.scss';
 import googlePlay from '../../assets/google-play.svg';
 import appStore from '../../assets/app-store.svg';
+
 import a1 from '../../assets/images/options-home/a1.png';
 import a2 from '../../assets/images/options-home/a2.png';
 import a3 from '../../assets/images/options-home/a3.png';
+import a4 from '../../assets/images/options-home/a4.png';
+import a5 from '../../assets/images/options-home/a5.png';
+import a6 from '../../assets/images/options-home/a6.png';
+import a7 from '../../assets/images/options-home/a7.png';
+import a8 from '../../assets/images/options-home/a8.png';
+import a9 from '../../assets/images/options-home/a9.png';
+
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -13,6 +22,8 @@ import a3 from '../../assets/images/options-home/a3.png';
 class Header extends Component {
 
     render() {
+
+        console.log('check props: ', this.props)
 
         return (
             <>
@@ -26,20 +37,20 @@ class Header extends Component {
                         <div className='center-content'>
                             <ul className='navbar-center-content'>
                                 <li className='child-center-content'>
-                                    <a href=''>Chuyên khoa</a>
-                                    <span>Tìm bác sĩ theo chuyên khoa</span>
+                                    <a href=''><FormattedMessage id='homeheader.specialty' /></a>
+                                    <span><FormattedMessage id='homeheader.searchdoctor' /></span>
                                 </li>
                                 <li className='child-center-content'>
-                                    <a href=''>Cơ sở y tế</a>
-                                    <span>Chọn bệnh viện phòng khám</span>
+                                    <a href=''><FormattedMessage id='homeheader.healthFacilities' /></a>
+                                    <span><FormattedMessage id="homeheader.selectHospital" /></span>
                                 </li>
                                 <li className='child-center-content'>
-                                    <a href=''>Bác sĩ</a>
-                                    <span>Lựa chọn bác sĩ</span>
+                                    <a href=''><FormattedMessage id='homeheader.doctor' /></a>
+                                    <span><FormattedMessage id='homeheader.selectDoctor' /></span>
                                 </li>
                                 <li className='child-center-content'>
-                                    <a href=''>Gói khám</a>
-                                    <span>Khám sức khỏe tổng quát</span>
+                                    <a href=''><FormattedMessage id='homeheader.checkupPackage' /></a>
+                                    <span><FormattedMessage id='homeheader.generalHealth' /></span>
                                 </li>
                             </ul>
                         </div>
@@ -47,11 +58,17 @@ class Header extends Component {
                         <div className='right-content'>
                             <div className='action'>
                                 <a href=''>
-                                    <i class="fa-solid fa-question"></i>
-                                    Hỗ Trợ
+                                    <i className="fa-solid fa-question"></i>
+                                    <FormattedMessage id='homeheader.support' />
                                 </a>
 
                                 <span className='phoneNumber'>0763 505 333</span>
+                            </div>
+
+                            <div className='language'>
+                                <span className='language-vi active'>VN </span>
+                                <span> / </span>
+                                <span className='language-en'> EN</span>
                             </div>
                         </div>
                     </div>
@@ -59,12 +76,12 @@ class Header extends Component {
 
                 <div className='header-banner'>
                     <div className='title'>
-                        <h3>NỀN TẢNG Y TẾ <br /> <b>CHĂM SÓC SỨC KHỎE TOÀN DIỆN</b></h3>
+                        <h3><FormattedMessage id='banner.title1' /> <br /> <b><FormattedMessage id='banner.title2' /></b></h3>
                     </div>
 
                     <div className='search'>
                         <i className="fa-solid fa-magnifying-glass"></i>
-                        <input type='text' placeholder='Tìm Bệnh Nhân' />
+                        <input type='text' placeholder='Tìm phòng khám ...' />
                     </div>
 
                     <div className='app-dowload'>
@@ -81,53 +98,49 @@ class Header extends Component {
                         <ul className='list-options'>
                             <li>
                                 <img alt='a1' src={a1} />
-                                <a href=''>Khám <br /> Chuyên khoa</a>
+                                <a href=''><FormattedMessage id='options.specialistExamination' /></a>
                             </li>
 
                             <li>
                                 <img alt='a2' src={a2} />
-                                <a href=''>Khám <br /> Từ xa</a>
+                                <a href=''><FormattedMessage id='options.remoteExamination' /></a>
                             </li>
 
                             <li>
                                 <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <a href=''><FormattedMessage id='options.generalExamination' /></a>
                             </li>
 
                             <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <img alt='a3' src={a4} />
+                                <a href=''><FormattedMessage id='options.medicalTests' /></a>
                             </li>
 
                             <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <img alt='a3' src={a5} />
+                                <a href=''><FormattedMessage id='options.mentalHealth' /></a>
                             </li>
 
                             <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <img alt='a6' src={a6} />
+                                <a href=''><FormattedMessage id='options.dentalExamination' /></a>
                             </li>
 
                             <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <img alt='a3' src={a7} />
+                                <a href=''><FormattedMessage id='options.surgeryPackage' /></a>
                             </li>
 
                             <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <img alt='a3' src={a8} />
+                                <a href=''><FormattedMessage id='options.testHealth' /></a>
                             </li>
 
                             <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
+                                <img alt='a3' src={a9} />
+                                <a href=''><FormattedMessage id='options.medicalNearYou' /></a>
                             </li>
 
-                            <li>
-                                <img alt='a3' src={a3} />
-                                <a href=''>Khám <br /> Tổng quát</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -138,7 +151,8 @@ class Header extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language,
     };
 };
 
