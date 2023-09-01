@@ -15,15 +15,22 @@ import a8 from '../../assets/images/options-home/a8.png';
 import a9 from '../../assets/images/options-home/a9.png';
 
 import { FormattedMessage } from 'react-intl';
+import { LANGUAGE } from '../../utils/constant';
+import { changeLanguage } from '../../store/actions/appActions';
 
 
 
 
 class Header extends Component {
 
-    render() {
+    handleChangeLanguage = (language) => {
+        //fire redux event: action
+        this.props.changeLanguageRedux(language);
+    }
 
-        console.log('check props: ', this.props)
+    render() {
+        /// lay tu redux
+        let language = this.props.language;
 
         return (
             <>
@@ -66,13 +73,19 @@ class Header extends Component {
                             </div>
 
                             <div className='language'>
-                                <span className='language-vi active'>VN </span>
+                                <span
+                                    className={language === 'vi' ? 'language-vi active' : 'language-vi'}
+                                    onClick={() => this.handleChangeLanguage(LANGUAGE.VI)}
+                                >VI </span>
                                 <span> / </span>
-                                <span className='language-en'> EN</span>
+                                <span
+                                    className={language === 'en' ? 'language-en active' : 'language-en'}
+                                    onClick={() => this.handleChangeLanguage(LANGUAGE.EN)}
+                                > EN</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
 
                 <div className='header-banner'>
                     <div className='title'>
@@ -158,6 +171,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageRedux: (language) => dispatch(changeLanguage(language))
     };
 };
 
