@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
+import Specialty from './Section/Specialty';
 
 class HomePage extends Component {
 
@@ -9,7 +10,10 @@ class HomePage extends Component {
         return (
             <>
                 <Header />
-                <h1>Hello Home Page</h1>
+                <Specialty />
+                <div style={{ height: '300px' }}>
+                </div>
+
             </>
         );
     }
