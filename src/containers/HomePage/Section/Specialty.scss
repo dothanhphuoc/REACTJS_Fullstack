@@ -1,20 +1,104 @@
 .section-specialty {
-    height: 320px;
+    height: fit-content;
     background-color: #f5f5f5;
+    padding: 30px 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    .specialty-container {
+        margin: 0 30px;
+        display: flex;
+        flex-direction: column;
+
+        .specialty-header {
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            a {
+                background: #ebebeb;
+                text-transform: uppercase;
+                padding: 10px 15px;
+                color: #282e41;
+                text-decoration: none;
+                font-size: 12px;
+                transition: 0.2s linear;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #45c3d2;
+                    color: #fff;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+
+        .specialty-content {
+
+            .specialty-box-item {
+
+                .background-img {
+                    width: 95%;
+                    height: 250px;
+                    margin: 0 auto;
+                    background-image: url(../../../assets/specialty/cot-song.jpg);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                }
+            }
+
+            .title-name {
+                font-size: 15px;
+                margin: 5px 10px;
+                color: #282e41;
+                display: inline-block;
+                transition: .2s linear;
+                cursor: pointer;
+
+                &:hover {
+                    color: #45c3d2;
+                }
+            }
+        }
+
+    }
 }
 
 
 // scss customize slick slider
 .slick-next,
 .slick-prev {
-    border: 1px solid red !important;
+    z-index: 999;
+    position: relative;
+    background-color: #45c3d2 !important;
+    color: #fff !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
 }
 
 .slick-prev {
-    position: relative;
-    left: 0 !important;
+    left: -20px !important;
+
+    &:before {
+        font-family: FontAwesome !important;
+        content: "\f053" !important;
+    }
 }
 
 .slick-next {
-    right: 0 !important;
+    right: -20px !important;
+
+    &:before {
+        font-family: FontAwesome !important;
+        content: "\f054" !important;
+    }
 }
