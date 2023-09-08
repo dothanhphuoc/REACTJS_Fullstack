@@ -1,0 +1,203 @@
+.section {
+
+    &.section-specialty {
+        background-color: #fff;
+    }
+
+    &.section-health-facility {
+        background-color: #f5f5f5;
+    }
+
+    &.section-doctor {
+        background-color: #fff;
+    }
+
+    &.section-handbook {
+        background-color: #f5f5f5;
+    }
+
+    .section-content {
+
+        .section-box-item {
+            margin: 0 10px;
+
+            &.section-doctor {
+                background-color: #fff;
+                cursor: pointer;
+
+                .section-doctor-box {
+                    margin: 0 10px;
+                    border: 1px solid #eee;
+                    padding: 10px;
+                }
+
+                &:hover {
+                    h3 {
+                        color: #45c3d2;
+                    }
+                }
+
+                .text-center {
+
+                    padding-top: 30px;
+
+                    h3 {
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+
+                    h4 {
+                        font-size: 11px;
+                    }
+                }
+
+            }
+
+            &.section-handbook {
+                margin: 20px 0;
+                border-right: 3px solid #eee;
+                cursor: pointer;
+
+                &:hover {
+                    p {
+                        transition: 0.2s linear;
+                        color: #45c3d2;
+                    }
+                }
+
+                div {
+                    display: flex;
+
+                    div {
+                        width: 50%;
+                    }
+
+                    p {
+                        width: 50%;
+                        font-size: 16px;
+                        font-weight: 600;
+                        padding-left: 10px;
+                    }
+                }
+            }
+
+            .background-img {
+                width: 95%;
+                height: 250px;
+                margin: 0 auto;
+                background-position: center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+
+                &.section-specialty {
+                    background-image: url(../../assets/specialty/cot-song.jpg);
+                    background-size: cover;
+                }
+
+                &.section-health-facility {
+                    background-image: url(../../assets/HealthFacility/benh-vien-an-viet.jpg);
+                    background-color: #fff;
+                }
+
+                &.section-doctor {
+                    background-image: url(../../assets/doctors/ha-van-quyet.jpg);
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                }
+
+                &.section-handbook-bg {
+                    background-image: url(../../assets/handbooks/bac-si-da-lieu-gioi-cho-be.png);
+                    height: 170px;
+                }
+            }
+        }
+
+        .title-name {
+            font-size: 15px;
+            margin: 5px 10px;
+            color: #282e41;
+            display: inline-block;
+            transition: .2s linear;
+            cursor: pointer;
+
+            &:hover {
+                color: #45c3d2;
+            }
+        }
+    }
+}
+
+.section {
+    height: fit-content;
+    padding: 30px 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    .section-container {
+        margin: 0 30px;
+        display: flex;
+        flex-direction: column;
+
+        .section-header {
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            a {
+                background: #ebebeb;
+                text-transform: uppercase;
+                padding: 10px 15px;
+                color: #282e41;
+                text-decoration: none;
+                font-size: 12px;
+                transition: 0.2s linear;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #45c3d2;
+                    color: #fff;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+
+
+
+    }
+}
+
+// scss customize slick slider
+.slick-next,
+.slick-prev {
+    z-index: 999;
+    background-color: #45c3d2 !important;
+    color: #fff !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+}
+
+.slick-prev {
+    left: -10px !important;
+
+    &:before {
+        font-family: FontAwesome !important;
+        content: "\f053" !important;
+    }
+}
+
+.slick-next {
+    right: -10px !important;
+
+    &:before {
+        font-family: FontAwesome !important;
+        content: "\f054" !important;
+    }
+}

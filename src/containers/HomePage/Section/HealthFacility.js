@@ -2,49 +2,49 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
 
-
-class Specialty extends Component {
+class HealthFacility extends Component {
 
     render() {
 
+
         return (
-            <div className='section section-specialty'>
+            <div className='section section-health-facility'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <h2>Chuyên Khoa Phổ Biến</h2>
+                        <h2>Cơ sở y tế nổi bật</h2>
                         <a href=''>Xem thêm</a>
                     </div>
                     <div className='section-content'>
                         <Slider {...this.props.setting}>
                             <div className='section-box-item'>
-                                <div className='background-img section-specialty'>
+                                <div className='background-img section-health-facility'>
                                 </div>
-                                <h4 className='title-name'>Cột sống</h4>
+                                <h4 className='title-name'>Bệnh viện đa khoa An Việt</h4>
                             </div>
                             <div className='section-box-item'>
-                                <div className='background-img section-specialty'>
+                                <div className='background-img section-health-facility'>
                                 </div>
-                                <h4 className='title-name'>Cột sống</h4>
+                                <h4 className='title-name'>Bệnh viện đa khoa An Việt</h4>
                             </div>
                             <div className='section-box-item'>
-                                <div className='background-img section-specialty'>
+                                <div className='background-img section-health-facility'>
                                 </div>
-                                <h4 className='title-name'>Cột sống</h4>
+                                <h4 className='title-name'>Bệnh viện đa khoa An Việt</h4>
                             </div>
                             <div className='section-box-item'>
-                                <div className='background-img section-specialty'>
+                                <div className='background-img section-health-facility'>
                                 </div>
-                                <h4 className='title-name'>Cột sống</h4>
+                                <h4 className='title-name'>Bệnh viện đa khoa An Việt</h4>
                             </div>
                             <div className='section-box-item'>
-                                <div className='background-img section-specialty'>
+                                <div className='background-img section-health-facility'>
                                 </div>
-                                <h4 className='title-name'>Cột sống</h4>
+                                <h4 className='title-name'>Bệnh viện đa khoa An Việt</h4>
                             </div>
                             <div className='section-box-item'>
-                                <div className='background-img section-specialty'>
+                                <div className='background-img section-health-facility'>
                                 </div>
-                                <h4 className='title-name'>Cột sống</h4>
+                                <h4 className='title-name'>Bệnh viện đa khoa An Việt</h4>
                             </div>
                         </Slider>
                     </div>
@@ -65,4 +65,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default connect(mapStateToProps, mapDispatchToProps)(HealthFacility);
