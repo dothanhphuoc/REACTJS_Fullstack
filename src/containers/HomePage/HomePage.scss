@@ -16,6 +16,52 @@
         background-color: #f5f5f5;
     }
 
+    &.section-about {
+        background-color: #f5f5f5;
+    }
+
+    &.section-footer {
+        padding: 15px 0px;
+        text-align: center;
+
+        p {
+            font-size: 18px;
+            margin-bottom: 0;
+
+            a {
+                font-weight: 600;
+                color: #45c3d2;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.section-about {
+
+        .section-about-content {
+            display: flex;
+            gap: 10px;
+
+            .section-about-content-video {
+                width: 50%;
+                height: 350px;
+            }
+
+            .section-about-content-logo {
+                width: 50%;
+
+                ul {
+                    li {
+                        list-style: none;
+                    }
+                }
+            }
+
+        }
+    }
+
+
     .section-content {
 
         .section-box-item {
@@ -172,6 +218,7 @@
 
     }
 }
+
 
 // scss customize slick slider
 .slick-next,
