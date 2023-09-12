@@ -23,7 +23,7 @@ class About extends Component {
                                 title="Ngày Em Đẹp Nhất - Vì Ngày Em Đẹp Nhất Là Ngày Anh Mất Em | Nhạc Lofi Chill Nhẹ Nhàng Hay Nhất 2023"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
+                                allowfullscreen="true">
                             </iframe>
                         </div>
                         <div className='section-about-content-logo'>
