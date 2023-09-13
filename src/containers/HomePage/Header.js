@@ -31,7 +31,6 @@ class Header extends Component {
     render() {
         /// lay tu redux
         let language = this.props.language;
-
         return (
             <>
                 <div className='header-container'>
